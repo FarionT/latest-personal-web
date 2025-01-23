@@ -1,0 +1,94 @@
+@import '../../colors/colors.scss';
+
+.navigation {
+  &-container {
+    padding: 10px;
+    @include themify($themes) {
+      background-color: themed('cardBackgroundColor');
+      box-shadow: themed('boxShadow');
+    }
+    border-radius: 20px;
+    padding: 15px 15px;
+    box-shadow: 5px 3px 10px 0px rgba(184,184,184,0.34);
+    border: 1px solid rgba(184,184,184,0.34);;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    gap: 15px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include themify($themes) {
+      background-color: themed('labelBackgroundColor');
+      .navigation-item-caption {
+        color: themed('textColor')
+      }
+    }
+    display: flex;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 70px;
+    height: 70px;
+    gap: 5px;
+    padding: 5px;
+    transition: 0.5s;
+    &-active {
+      background-color: #038ace !important;
+      .navigation-item-caption {
+        color: white !important;
+      }
+      svg {
+        fill: white;
+      }
+    }
+    &:hover {
+      background-color: #038ace;
+      transition: 0.5s;
+      .navigation-item-caption {
+        color: white
+      }
+      svg {
+        fill: white;
+      }
+    }
+    &-image {
+      width: 20px;
+      height: auto;
+    }
+    &-caption {
+      color: black;
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+  
+  }
+  
+  @media screen and (min-width: 768px) {
+    &-container {
+      align-self: start;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    
+  }
+  
+  @media screen and (min-width: 1200px) {
+    &-container {
+      display: flex;
+      position: sticky;
+      top: 7%;
+      flex-direction: column;
+      align-self: start;
+    }
+  }
+}

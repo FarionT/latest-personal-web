@@ -1,0 +1,84 @@
+@import '../../colors/colors.scss';
+
+.theme-light {
+  background-color: #efefef;
+}
+
+.theme-dark {
+  background-color: #252b30;
+  svg path {
+    // fill: white
+  }
+}
+
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 75px;
+  width: 85vw;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  &-toggle {
+    align-self: flex-end;
+    margin-bottom: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.5s;
+    @include themify($themes) {
+      background-color: themed('cardBackgroundColor');
+      color: themed('textColor');
+      box-shadow: themed('boxShadow');
+    }
+    &:hover {
+      background-color: rgb(206, 206, 210);
+      transition: 0.5s;
+    }
+    &-icon {
+      width: 36px;
+      height: 36px;
+      margin: auto;
+    }
+    &-dark {
+      background-color: #252b30;
+      &:hover {
+        background-color: #5b6064 !important;
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    box-sizing: border-box;
+  }
+  
+  @media screen and (min-width: 576px) {
+    // width: 95vw;
+  }
+  
+  @media screen and (min-width: 768px) {
+    &-content {
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+      gap: 50px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    width: 90vw;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    width: 85vw;
+  }
+}

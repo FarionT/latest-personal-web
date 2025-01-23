@@ -1,0 +1,48 @@
+@import '../../colors/colors.scss';
+
+.about {
+  &-container {
+    
+  }
+
+  &-header {
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &-text {
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 500;
+      width: fit-content;
+      white-space: nowrap;
+    }
+    &-line {
+      height: 2px;
+      border-radius: 2px;
+      background-color: blue;
+      width: 100%
+    }
+  }
+
+  &-body {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 576px) {
+    
+  }
+  
+  @media screen and (min-width: 768px) {
+    &-container {
+      width: 100% ;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+  }
+  
+  @media screen and (min-width: 1200px) {
+    
+  }
+}

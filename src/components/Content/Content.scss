@@ -1,0 +1,47 @@
+@import '../../colors/colors.scss';
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 50px;
+  margin-bottom: 50px;
+  &-container {
+    // background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: inherit;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    @include themify($themes) {
+      background-color: themed('cardBackgroundColor');
+      color: themed('textColor');
+      box-shadow: themed('boxShadow');
+    }
+    // margin-top: 100px;
+  }
+
+  @media screen and (min-width: 576px) {
+
+  }
+  
+  @media screen and (max-width: 768px) {
+    // &-container {
+    //   margin-top: 100px;
+    // }
+  }
+  
+  @media screen and (min-width: 992px) {
+    &-container {
+      padding: 40px;
+      
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    &-container {
+      padding: 50px;
+    }
+  }
+}

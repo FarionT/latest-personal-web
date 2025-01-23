@@ -1,0 +1,47 @@
+$color-blue: blue;
+
+$themes: (
+  light: (
+    bodyBackgroundColor: #efefef,
+    labelBackgroundColor: #F3F6F6,
+    cardBackgroundColor: white,
+    headerFooterBackground: #fff,
+    textColor: #000,
+    negativeTextColor: #eff2f7,
+    toggleBackground: #dfe4ea,
+    boxShadow: 5px 3px 10px 0px rgba(184,184,184,0.34)
+  ),
+  dark: (
+    bodyBackgroundColor: #213547,
+    cardBackgroundColor: rgb(35, 35, 35),
+    labelBackgroundColor: #464646,
+    headerFooterBackground: #fff,
+    textColor: #ffffff,
+    negativeTextColor: #eff2f7,
+    toggleBackground: #dfe4ea,
+    boxShadow: none
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

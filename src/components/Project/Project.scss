@@ -1,0 +1,148 @@
+@import '../../colors/colors.scss';
+
+.project {
+  &-container {
+
+  }
+
+  &-header {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &-text {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 500;
+      width: fit-content;
+      white-space: nowrap;
+    }
+    &-line {
+      height: 2px;
+      border-radius: 2px;
+      background-color: blue;
+      width: 100%
+    }
+  }
+  
+  &-experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 15px;
+      gap: 10px;
+      transition: 0.5s;
+      &-left {
+        width: 200px;
+      }
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('labelBackgroundColor');
+          color: themed('textColor');
+        }
+      }
+      &-list {
+        padding-left: 20px;
+        font-size: 14px;
+      }
+      &-job {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      &-company {
+        font-size: 12px;
+      }
+      &-duration {
+        font-size: 12px;
+      }
+      &-image {
+        width: 150px;
+        align-self: start;
+      }
+    }
+  }
+
+  &-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 15px;
+      gap: 10px;
+      transition: 0.5s;
+      &-left {
+        width: 200px;
+      }
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('labelBackgroundColor');
+          color: themed('textColor');
+        }
+      }
+      &-image {
+        width: 200px;
+        border-radius: 5px;
+        border: 2px solid rgb(224, 222, 222)
+      }
+      &-list {
+        padding-left: 20px;
+        font-size: 14px;
+      }
+      &-job {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      &-scope {
+        font-size: 12px;
+      }
+      &-duration {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+  
+  }
+  
+  @media screen and (min-width: 768px) {
+    
+  }
+  
+  @media screen and (min-width: 992px) {
+    
+  }
+  
+  @media screen and (min-width: 1200px) {
+    &-experiences {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      &-item {
+        flex-direction: row;
+        padding: 20px;
+        gap: 40px;
+      }
+    }
+
+    &-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      &-item {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        gap: 40px;
+      }
+    }
+  }
+}
